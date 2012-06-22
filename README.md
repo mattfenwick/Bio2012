@@ -39,3 +39,4 @@ Potential projects
     - Kyte-doolittles (and other hydropathy algorithms)
     - reverse complements
     - open-reading frames
+
