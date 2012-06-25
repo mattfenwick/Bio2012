@@ -7,8 +7,8 @@ Getting started with git
  1. setup [username](https://help.github.com/articles/set-up-git) 
  and [email](https://help.github.com/articles/setting-your-email-in-git)
 
-    git config --global user.name "My Name"
-    git config --global user.email "email@email.com"
+        git config --global user.name "My Name"
+        git config --global user.email "email@email.com"
         
  2. [generate ssh keys](https://help.github.com/articles/generating-ssh-keys#platform-all).
  This will allow you to push your local repos to github 
