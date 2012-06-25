@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+ <head>
+  <title>First app</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+  <meta content="xyz" name="author" />
+  <link href="style.css" rel="style/style.css" type="text/css" />
+
+  <script type="text/javascript" src="scripts/jquery1.7.2.js"></script>
+
+ </head>
+ <body>
+
+  <div id="container">
+   
+   <button id="but1">Click me!</button>
+   
+   <ul>
+   </ul>
+   
+  </div>
+
+
+<p>
+Unit tests are <a href="test.html">here</a>.
+</p>
+
+ <script type="text/javascript">
+
+
+
+ $(document).ready(function() {
+
+  var num = 0;
+
+   $("#but1").click(function() {
+   
+     num++;
+   
+     $("#container ul").append("<li>" + num + "</li>");
+   
+   });
+
+ });
+
+</script>
+
+ </body>
+</html>
