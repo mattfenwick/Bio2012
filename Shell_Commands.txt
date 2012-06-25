@@ -1,0 +1,3 @@
+Dir - all the files in the directory
+cd - moves you to different directory
+start . -(windows only) opens up explorer
