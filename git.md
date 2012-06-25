@@ -38,15 +38,15 @@ Getting started with git
         git pull origin master
 
         #How to check which branch your on
-	git branch
+        git branch
 	
-	#How to switch branches
-	git checkout [branchname]
+        #How to switch branches
+        git checkout [branchname]
 	
-	#Create a branch and switch to it
-	git checkout -b [branchname]
+        #Create a branch and switch to it
+        git checkout -b [branchname]
 	
-	#Push/pull to gh-pages
-	git push origin gh-pages
-	git pull origin gh-pages
-  	#You need to be in gh-pages if you are going to pull from gh-pages
+        #Push/pull to gh-pages
+        git push origin gh-pages
+        git pull origin gh-pages
+        #You need to be in gh-pages if you are going to pull from gh-pages
