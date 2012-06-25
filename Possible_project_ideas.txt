@@ -1,0 +1,5 @@
+Codex for proteins-where we can put a protein sequence and find stats about it
+-Molecular weight
+-number of residues
+-number of hydrophobic/hydrophillic residues
+-pair with DNA sequence/or find the organisms that have this protein
