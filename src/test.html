@@ -3,8 +3,9 @@
  <head>
   <title>Tests</title>
   <link href="style/qunit.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="scripts/jquery1.7.2.js"></script>
-  <script type="text/javascript" src="scripts/qunit.js"></script>
+  <script type="text/javascript" src="jslibs/jquery1.7.2.js"></script>
+  <script type="text/javascript" src="jslibs/qunit.js"></script>
+  <script type="text/javascript" src="scripts/tutorial.js"></script>
  </head>
 
 
@@ -12,18 +13,87 @@
   $(document).ready(function(){
 	
 	
-	module("first module");
+	module("Tutorial");
 	
-	test("passing test", function() {
+	test("example of a passing test", function() {
 	
 	  ok(1, "this test passes");
 	
 	});
 	
-	test("failing test", function() {
+	test("declare a global variable", function() {
 	
-	  ok(0, "this test fails");
+        ok(Tutorial, 'variable has been created and is not falsy');
+
+	  equal(Tutorial.toString(), "[object Object]", "it's an object (AKA map, hash table, dictionary, associate array ...)");
 	
+	});
+	
+	test("object properties", function() {
+	
+	  equal(Tutorial.city, "Farmington", 'properties can be values');
+
+        equal(Tutorial.state, "Connecticut");
+
+        equal(Tutorial.add(3, 4), 7, 'properties can also be functions');
+
+        equal(Tutorial.sub(18, 12), 6);
+	
+	});
+	
+	test("primitives", function() {
+	
+	  equal(14, Tutorial.myInteger, "javascript has integers ...");
+	
+        ok(Math.abs(12.3 - Tutorial.myFloat) < 0.1, " ... floating points ... ");
+
+        equal("Javascript!", Tutorial.myString, " ... strings ... ");
+
+        ok(Tutorial.myTrueBoolean === true, " ... and booleans");
+
+        ok(Tutorial.myFalseBoolean === false, "true AND false");        
+	});
+	
+	test("arrays", function() {
+	
+	  equal(2, Tutorial.myArray1.length, "arrays have a 'length' property");
+
+        equal(3, Tutorial.myArray2.length);
+
+        deepEqual([27, "dog"], Tutorial.myArray1, "array elements can be different types");
+
+        deepEqual([1, 2, 3], Tutorial.myArray2, "but probably shouldn't be");
+
+        // push returns the length of the new array
+        equal(2, Tutorial.myArray3.push(5), "arrays have many useful methods, such as 'push' ...");
+
+        function filterer(x) {
+          return x < 8;
+        }
+        deepEqual([6, 7], Tutorial.myArray4.filter(filterer), " ... filter ...");
+
+        function mapper(x) {
+          return x - 3;
+        }
+        deepEqual([3, 4, 5, 6], Tutorial.myArray4.map(mapper), " ... and map (and others!)");
+	
+	});
+	
+	test("myFirstFunction", function() {
+	
+        deepEqual([], Tutorial.myFirstFunction(18, 18), "equal args -> empty list");
+	
+        deepEqual([4, 5, 6], Tutorial.myFirstFunction(4, 7), "4 to 7");
+
+        deepEqual([-2, -1, 0], Tutorial.myFirstFunction(-2, 1), "-2 to 1");
+
+        try {
+          Tutorial.myFirstFunction(8, 7);
+          ok(false, "should throw an exception");
+        } catch(e) {
+          ok(true, "throws an exception when low greater than high");
+        }
+
 	});
     
   });
