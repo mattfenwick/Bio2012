@@ -9,3 +9,8 @@ Codex for proteins-where we can put a protein sequence and find stats about it
 
 Educational guide to biology topics
 
+A PCR app. One that could tell you where primers would bind in a genome. 
+It would be nice to have one that could tell you the appropriate 
+annealing temp based in gc content and see if there unique restriction sites 
+in the primers.
+They already exist but it would be cool to design your own.
