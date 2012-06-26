@@ -47,15 +47,19 @@ return {
   'add': function(x, y) {
       return x + y;
   },
-
+   'state':'Connecticut',
+   'myInteger': 14,
+   'myFloat': 12.300000000001,
   'myTrueBoolean': true,
-
+  'myFalseBoolean': false,
   'myArray1': [27, "dog"],
 
-  'myArray2': [],
-
-  'myFirstFunction': myFirstFunction
-
+  'myArray2': [1,2,3],
+  'myArray3': [1],
+  'myString': "Javascript!",
+  'myFirstFunction': myFirstFunction,
+  'sub': function(a,b){return a-b;},
+  'myArray4':[6,7,8,9]
 };
 
 })();
