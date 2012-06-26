@@ -3,3 +3,4 @@ cd - moves you to different directory
 start . -(windows only) opens up explorer
 ls-Mac equivalent of Dir
 open . =opens files
+hi
