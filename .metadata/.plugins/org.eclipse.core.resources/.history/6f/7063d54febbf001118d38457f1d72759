@@ -1,0 +1,46 @@
+//http://www.bioinformatics.org/sms/common_new.js	;
+var sequence = $("#protein").val();
+var aminoAcids = [];
+var length = sequence.length; 
+function typeOfSequence()
+{
+if(sequence.substring(0,1).equals("M"))	
+	{
+		return 1;
+	}
+function typeOfSequence()
+{
+if(sequence.substring(0,4).equals("Met"))	
+	{
+		return 3;
+	}
+}
+function typeOfSequence()
+{
+if(sequence.substring(0,11).equals("Methionine"))	
+	{
+		return 0;
+	}
+}
+}
+
+var ArrayOfAminoAcidThreeLett=["Ala","Cys","Asp","Glu","Phe","Gly",
+                               "His","Ile","Lys","Leu","Met","Asn","Pro","Gln","Arg","Ser","Thr","Val","Trp","Tyr","End"];
+var ArrayOfAminoAcidOneLett=["A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y","Z"];
+var ArrayOfAminoAcids = ["Alanine","Cysteine","Glutamine","Phenylalinine","Glycine","Histidine","Isoleucine",
+                         "Lysine","Leucine","Methionine","Asparagine","Proline","Glutamine","Arginine","Serine",
+                         		"Threonine","Valine","Tryptophan","Tryosine","End"];
+function loadSequence()
+{
+	for(var i=0; i<length;i++)
+	{
+		var acids = sequence.substring(i,i+1);
+		aminoAcids[i] = acids;
+	}
+}
+function getMolecularWeight();
+{
+
+}
+
+var analyzer ={load:loadseqence()};
