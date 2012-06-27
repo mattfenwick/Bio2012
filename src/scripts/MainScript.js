@@ -15,8 +15,6 @@ function removeSpaces(seq) {
 			noSpaces += character;
 		}
 	}
-	
-	sequence = noSpaces;
 	return noSpaces;
 }
 /*
@@ -64,13 +62,18 @@ new AminoAcid("Tyrosine","Tyr","Y")];
 
 //Transfers string sequence into an array of amino acids
 function loadSequence(seq) {
-	
-	var i,acids;
+	var seq1 = removeSpaces(seq);
+	seq1=seq1.toUpperCase();
+	var i,acid, letter;
 	var aminoAcids =[];
 	var letterCodes = createOneLetterLookup(aminoAcidsReference);
 	for (i = 0; i < seq.length; i++) {
-		 acids
-		aminoAcids.push(letterCodes[seq[i]]);
+		 letter = seq1[i];
+		 acid = letterCodes[letter];
+		 if(!acid){
+			 throw new Error("Could not find amino acid "+ letter);
+		 }
+		aminoAcids.push(acid);
 	}
 	return aminoAcids;
 }

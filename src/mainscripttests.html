@@ -29,15 +29,21 @@
 	});
 	
 	test("load sequence", function() {
-	
+	  
 	  var seq1 = "MATT";
-	  var aas = createOneLetterLookup();
-	
+	  var aas = createOneLetterLookup(aminoAcidsReference);
+	  
 	  deepEqual([aas["M"], aas["A"], aas["T"], aas["T"]], loadSequence(seq1));
 	
 	});
-
     
+	test("load sequence with correct string", function() {
+		var seq2 = "m e n n k";
+        var aas = createOneLetterLookup(aminoAcidsReference);
+        deepEqual([aas["M"],aas["E"], aas["N"], aas["N"], aas["K"]], loadSequence(seq2));
+        
+	});
+     
   });
 </script>
 
