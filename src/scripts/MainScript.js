@@ -1,21 +1,28 @@
 //http://www.bioinformatics.org/sms/common_new.js	;
 var sequence = "mennktsvds ksinnfevkt ihgsksvdsg iyldssykmd ypemgiciii nnknfhkstg mssrsgtdvd aanlretfmg lkyqvrnknd ltredilelm dsvskedhsk rssfvcvils hgdegviygt ngpvelkklt sffrgdycrs ltgkpklfii qacrgteldc gietdsgtde emacqkipve adflyaysta pgyyswrnsk dgswfiqslc smlklyahkl efmhiltrvn rkvatefesf sldstfhakk qipcivsmlt kelyfyh"
-var aminoAcids = [];
 var length = sequence.length;
 var sequenceType = typeOfSequence();
 
+/*Function: removes whitespace from protein sequence
+ * Input: protein sequence with whitespace
+ * Output:protein sequence without whitespace
+ */
 function removeSpaces(seq) {
-	var noSpaces = "",i,char;
+	var noSpaces = "",i,character;
 	for (i = 0; i < seq.length; i++) {
-		 char = seq[i];
-		if (char !== (" ")) {
-			noSpaces += char;
+		 character = seq[i];
+		if (character !== (" ")) {
+			noSpaces += character;
 		}
 	}
 	
+	sequence = noSpaces;
 	return noSpaces;
 }
-
+/*
+ * Function: determines the format of protein sequence
+ * Output:returns 1 if one letter codes are used, 3 if three letter codes are used, and 0 if full names are used
+ */
 function typeOfSequence() {
 	if (sequence.substring(0, 1) === "M") {
 		return 1;
@@ -28,27 +35,53 @@ function typeOfSequence() {
 		return 0;
 	}
 }
+function AminoAcid(fullName, threeLett, oneLett, weight){
+	this.fullName=fullName;
+	this.oneLett=oneLett;
+	this.threeLett=threeLett;
+	this.weight=weight;
+}
+var aminoAcidsReference=[new AminoAcid("Alanine","Ala","A",89.09),
+new AminoAcid("Cysteine", "Cys","C","121.15"),
+new AminoAcid("Aspartic Acid","Asp","D"),
+new AminoAcid("Glutamic Acid","Glu","E"),
+new AminoAcid("Phenylalanine","Phe","F"),
+new AminoAcid("Glycine","Gly","G"),
+new AminoAcid("Histidine","His","H"),
+new AminoAcid("Isoleucine","Ile","I"),
+new AminoAcid("Lysine","Lys","K"),
+new AminoAcid("Leucine","Leu","L"),
+new AminoAcid("Methionine","Met","M"),
+new AminoAcid("Asparagine","Asn","N"),
+new AminoAcid("Proline","Pro","P"),
+new AminoAcid("Glutamine","Gln","Q"),
+new AminoAcid("Arginine","Arg","R"),
+new AminoAcid("Serine","Ser","S"),
+new AminoAcid("threonine","Thr","T"),
+new AminoAcid("Valine","Val","V"),
+new AminoAcid("Tryptophan","Trp","W"),
+new AminoAcid("Tyrosine","Tyr","Y")];
 
-var ArrayOfAminoAcidThreeLett = [ "Ala", "Cys", "Asp", "Glu", "Phe", "Gly",
-		"His", "Ile", "Lys", "Leu", "Met", "Asn", "Pro", "Gln", "Arg", "Ser",
-		"Thr", "Val", "Trp", "Tyr", "End" ];
-var ArrayOfAminoAcidOneLett = [ "A", "C", "D", "E", "F", "G", "H", "I", "K",
-		"L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "Y", "Z" ];
-
-var ArrayOfAminoAcids = [ "Alanine", "Cysteine", "Glutamine", "Phenylalinine",
-		"Glycine", "Histidine", "Isoleucine", "Lysine", "Leucine",
-		"Methionine", "Asparagine", "Proline", "Glutamine", "Arginine",
-		"Serine", "Threonine", "Valine", "Tryptophan", "Tryosine", "End" ];
-var ArrayOfAminoWeights = [ 89.09, 121.15, 133.10, 147.15, 165.19, 75.07,
-		155.16, 131.17, 146.19, 131.17, 149.21, 132.12, 115.13, 1146.15,
-		174.20, 105.09, 119.12, 117.15, 204.23, 101.19, 146.64 ];
-
-function loadSequence() {
-	var i;
-	for (i = 0; i < length; i++) {
-		var acids = sequence.substring(i, i + 1);
-		aminoAcids[i] = acids;
+//Transfers string sequence into an array of amino acids
+function loadSequence(seq) {
+	
+	var i,acids;
+	var aminoAcids =[];
+	var letterCodes = createOneLetterLookup(aminoAcidsReference);
+	for (i = 0; i < seq.length; i++) {
+		 acids
+		aminoAcids.push(letterCodes[seq[i]]);
 	}
+	return aminoAcids;
+}
+
+function createOneLetterLookup(aminoAcids){
+	var i,allLetters={};
+	for(i =0; i<aminoAcids.length;i++){
+		allLetters[aminoAcids[i].oneLett]=aminoAcids[i];
+		
+	}
+	return allLetters;
 }
 
 function getMolecularWeight() {
@@ -68,11 +101,11 @@ function getMolecularWeight() {
 	return totoalWeight;
 }
 
-function calcPercentage(a) {
+function calcWeightPercentage(a) {
 
 }
 
 var analyzer = {
-	load : loadSequence(),
+	load : loadSequence,
 	getWeight : getMolecularWeight,
 };
