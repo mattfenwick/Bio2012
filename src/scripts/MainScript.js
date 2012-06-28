@@ -40,25 +40,25 @@ function AminoAcid(fullName, threeLett, oneLett, weight){
 	this.weight=weight;
 }
 var aminoAcidsReference=[new AminoAcid("Alanine","Ala","A",89.09),
-new AminoAcid("Cysteine", "Cys","C","121.15"),
-new AminoAcid("Aspartic Acid","Asp","D"),
-new AminoAcid("Glutamic Acid","Glu","E"),
-new AminoAcid("Phenylalanine","Phe","F"),
-new AminoAcid("Glycine","Gly","G"),
-new AminoAcid("Histidine","His","H"),
-new AminoAcid("Isoleucine","Ile","I"),
-new AminoAcid("Lysine","Lys","K"),
-new AminoAcid("Leucine","Leu","L"),
-new AminoAcid("Methionine","Met","M"),
-new AminoAcid("Asparagine","Asn","N"),
-new AminoAcid("Proline","Pro","P"),
-new AminoAcid("Glutamine","Gln","Q"),
-new AminoAcid("Arginine","Arg","R"),
-new AminoAcid("Serine","Ser","S"),
-new AminoAcid("threonine","Thr","T"),
-new AminoAcid("Valine","Val","V"),
-new AminoAcid("Tryptophan","Trp","W"),
-new AminoAcid("Tyrosine","Tyr","Y")];
+new AminoAcid("Cysteine", "Cys","C",121.15),
+new AminoAcid("Aspartic Acid","Asp","D",133.10),
+new AminoAcid("Glutamic Acid","Glu","E",147.15),
+new AminoAcid("Phenylalanine","Phe","F",165.19),
+new AminoAcid("Glycine","Gly","G",75.07),
+new AminoAcid("Histidine","His","H",155.16),
+new AminoAcid("Isoleucine","Ile","I",131.17),
+new AminoAcid("Lysine","Lys","K",146.19),
+new AminoAcid("Leucine","Leu","L",131.17),
+new AminoAcid("Methionine","Met","M",149.21),
+new AminoAcid("Asparagine","Asn","N",132.12),
+new AminoAcid("Proline","Pro","P",115.13),
+new AminoAcid("Glutamine","Gln","Q",146.15),
+new AminoAcid("Arginine","Arg","R",174.20),
+new AminoAcid("Serine","Ser","S",105.09),
+new AminoAcid("threonine","Thr","T",119.12),
+new AminoAcid("Valine","Val","V",117.15),
+new AminoAcid("Tryptophan","Trp","W",204.23),
+new AminoAcid("Tyrosine","Tyr","Y",101.19)];
 
 //Transfers string sequence into an array of amino acids
 function loadSequence(seq) {
@@ -67,12 +67,9 @@ function loadSequence(seq) {
 	var i,acid, letter;
 	var aminoAcids =[];
 	var letterCodes = createOneLetterLookup(aminoAcidsReference);
-	for (i = 0; i < seq.length; i++) {
+	for (i = 0; i < seq1.length; i++) {
 		 letter = seq1[i];
 		 acid = letterCodes[letter];
-		 if(!acid){
-			 throw new Error("Could not find amino acid "+ letter);
-		 }
 		aminoAcids.push(acid);
 	}
 	return aminoAcids;
@@ -87,21 +84,14 @@ function createOneLetterLookup(aminoAcids){
 	return allLetters;
 }
 
-function getMolecularWeight() {
-	var totalWeight = 0,i,acid, indexOfAcid,acidWeight;
-	for (i = 0; i < length; i++) {
+function getMolecularWeight(aminoAcids) {
+	var totalWeight = 0,i,acid,acidWeight;
+	for (i = 0; i < aminoAcids.length; i++) {
 
-		 acid = aminoAcids[i];
-		 indexOfAcid = 0;
-		if (type = 1) {
-			indexOfAcid = ArrayOfAminoAcidThreeLett.indexOf(acid);
-		} else {
-			indexOfAcid = ArrayOfAminoAcidOneLett.indexOf(acid);
-		}
-	    acidWeight = ArrayOfAminoAcidWeights[indexOfAcid];
+		 acidWeight = aminoAcids[i].weight;
 		totalWeight += acidWeight;
 	}
-	return totoalWeight;
+	return totalWeight;
 }
 
 function calcWeightPercentage(a) {

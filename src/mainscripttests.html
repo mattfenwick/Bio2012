@@ -37,12 +37,33 @@
 	
 	});
     
+	test("check if removeSpaces is working in load Sequence", function(){
+		var seq="ME EN N K";
+		var aas = createOneLetterLookup(aminoAcidsReference);
+		var seq1 = removeSpaces(seq);
+		var i;spaces=false;
+		for(i = 0; i<seq1.length; i++){
+			if(seq1[i]===" "){
+				throw new Error("space found in seq1");
+				spaces=true;
+			}
+		}
+		deepEqual(spaces, false);
+	})
+	
 	test("load sequence with correct string", function() {
-		var seq2 = "m e n n k";
+		var seq2 = "A A A A A";
         var aas = createOneLetterLookup(aminoAcidsReference);
-        deepEqual([aas["M"],aas["E"], aas["N"], aas["N"], aas["K"]], loadSequence(seq2));
+        deepEqual([aas["A"],aas["A"], aas["A"], aas["A"], aas["A"]], loadSequence(seq2));
         
 	});
+	
+	test("check molecularWeight", function(){
+		var seq = "AAAAA";
+		var aas=createOneLetterLookup(aminoAcidsReference);
+		var acids =loadSequence(seq);
+		deepEqual(((acids[0].weight)*5), getMolecularWeight(acids));
+	})
      
   });
 </script>
