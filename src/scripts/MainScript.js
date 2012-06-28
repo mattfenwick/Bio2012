@@ -33,32 +33,32 @@ function typeOfSequence() {
 		return 0;
 	}
 }
-function AminoAcid(fullName, threeLett, oneLett, weight){
+function AminoAcid(fullName, threeLett, oneLett, weight, property){
 	this.fullName=fullName;
 	this.oneLett=oneLett;
 	this.threeLett=threeLett;
 	this.weight=weight;
 }
-var aminoAcidsReference=[new AminoAcid("Alanine","Ala","A",89.09),
-new AminoAcid("Cysteine", "Cys","C",121.15),
-new AminoAcid("Aspartic Acid","Asp","D",133.10),
-new AminoAcid("Glutamic Acid","Glu","E",147.15),
-new AminoAcid("Phenylalanine","Phe","F",165.19),
-new AminoAcid("Glycine","Gly","G",75.07),
-new AminoAcid("Histidine","His","H",155.16),
-new AminoAcid("Isoleucine","Ile","I",131.17),
-new AminoAcid("Lysine","Lys","K",146.19),
-new AminoAcid("Leucine","Leu","L",131.17),
-new AminoAcid("Methionine","Met","M",149.21),
-new AminoAcid("Asparagine","Asn","N",132.12),
-new AminoAcid("Proline","Pro","P",115.13),
-new AminoAcid("Glutamine","Gln","Q",146.15),
-new AminoAcid("Arginine","Arg","R",174.20),
-new AminoAcid("Serine","Ser","S",105.09),
-new AminoAcid("threonine","Thr","T",119.12),
-new AminoAcid("Valine","Val","V",117.15),
-new AminoAcid("Tryptophan","Trp","W",204.23),
-new AminoAcid("Tyrosine","Tyr","Y",101.19)];
+var aminoAcidsReference=[new AminoAcid("Alanine","Ala","A",89.09,"hydrophobic"),
+new AminoAcid("Cysteine", "Cys","C",121.15,"hydrophilic"),
+new AminoAcid("Aspartic Acid","Asp","D",133.10,"negative"),
+new AminoAcid("Glutamic Acid","Glu","E",147.15,"negative"),
+new AminoAcid("Phenylalanine","Phe","F",165.19,"hydrophobic"),
+new AminoAcid("Glycine","Gly","G",75.07,"hydrophobic"),
+new AminoAcid("Histidine","His","H",155.16,"positive"),
+new AminoAcid("Isoleucine","Ile","I",131.17,"hydrophobic"),
+new AminoAcid("Lysine","Lys","K",146.19,"positive"),
+new AminoAcid("Leucine","Leu","L",131.17,"hydrophobic"),
+new AminoAcid("Methionine","Met","M",149.21,"hydrophobic"),
+new AminoAcid("Asparagine","Asn","N",132.12,"hydrophilic"),
+new AminoAcid("Proline","Pro","P",115.13,"hydrophobic"),
+new AminoAcid("Glutamine","Gln","Q",146.15,"hydrophilic"),
+new AminoAcid("Arginine","Arg","R",174.20,"positive"),
+new AminoAcid("Serine","Ser","S",105.09,"hydrophilic"),
+new AminoAcid("threonine","Thr","T",119.12,"hydrophilic"),
+new AminoAcid("Valine","Val","V",117.15,"hydrophobic"),
+new AminoAcid("Tryptophan","Trp","W",204.23,"tryptophan"),
+new AminoAcid("Tyrosine","Tyr","Y",101.19,"hydrophilic")];
 
 //Transfers string sequence into an array of amino acids
 function loadSequence(seq) {
