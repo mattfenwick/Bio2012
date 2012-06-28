@@ -33,6 +33,8 @@ function typeOfSequence() {
 		return 0;
 	}
 }
+
+
 function AminoAcid(fullName, threeLett, oneLett, weight, property){
 	this.fullName=fullName;
 	this.oneLett=oneLett;
@@ -75,6 +77,7 @@ function loadSequence(seq) {
 	return aminoAcids;
 }
 
+//Function: creates an object whose keys are one letter abbvs and properties are amino acid objects 
 function createOneLetterLookup(aminoAcids){
 	var i,allLetters={};
 	for(i =0; i<aminoAcids.length;i++){
@@ -83,6 +86,7 @@ function createOneLetterLookup(aminoAcids){
 	return allLetters;
 }
 
+//calculates total molecular weight of given protein sequence
 function getMolecularWeight(aminoAcids) {
 	var totalWeight = 0,i,acid,acidWeight;
 	for (i = 0; i < aminoAcids.length; i++) {
@@ -92,6 +96,8 @@ function getMolecularWeight(aminoAcids) {
 	return totalWeight;
 }
 
+//calculates weight percentage of a given amino acid from the given amino acid sequence
+//returns a percentage as a number
 function calcWeightPercentage(acidseq,acid) {
     var length = acidseq.length;
     var weight = acid.weight;
@@ -105,14 +111,65 @@ function calcWeightPercentage(acidseq,acid) {
     totalAcidWeight = numOfAcid*weight;
     unRounded= (totalAcidWeight/totalWeight)*100;
     finalPercent = unRounded.toPrecision(3);
-    return finalPercent;
+    return Number(finalPercent);
 }
-function calcAllWeightPercentage(acidseq){
-	var i,allWeights=[];
+
+//returns an object containing all amino acids and corresponding weight percentages
+function getAllWeightPercentages(acidseq, oneLetterLookup) {
+	var allAcidWeights = {}, currentAcid, i, currentWeight;
+	for (i = 0; i < acidseq.length; i++) {
+		currentAcid = acidseq[i];
+		currentWeight = calcWeightPercentage(acidseq, currentAcid)
+		allAcidWeights[acidseq[i].fullName] = currentWeight;
+	}
+	return allAcidWeights;
+}
+
+//creates object that has aminoAcid names as keys whose properties will be percentages
+function createFullLetterLookup(aminoAcids) {
+	var i, allLetters = {};
+	for (i = 0; i < aminoAcids.length; i++) {
+		allLetters[aminoAcids[i].fullName] = 0;
+	}
+	return allLetters;
+}
+
+function getAllWeightPercentages2(acidseq, fullLetterLookup) {
+	var allAcidWeights = fullLetterLookup, currentAcid, i, currentWeight;
+	for (i = 0; i < acidseq.length; i++) {
+		currentAcid = acidseq[i];
+		currentWeight = calcWeightPercentage(acidseq, currentAcid);
+		allAcidWeights[currentAcid.fullName] = currentWeight;
+	}
+	return allAcidWeights;
+}
+
+//when called, takes a string protein sequence and outputs an object with amino acid weight percentages
+function run(sequence){
+	var aminoAcids = loadSequence(sequence),oneLetterLookup=createOneLetterLookup(aminoAcidsReference),
+	fullLetterLookup = createFullLetterLookup(aminoAcidsReference),
+	finalObj=getAllWeightPercentages(aminoAcids);
+	return finalObj
+}
+
+function calc
+/*
+ * 
+ Might not need these functions
+function getUniqueAcids(acidSeq,oneLetterLookup){
+	var uniqueAcids=[],i,isUnique;
 	for(i=0;i<acidseq.length;i++){
-		
+		currentAcid=acidseq[i];
+		isUnique=unqueAcids.forEach(isEqual(acid))
+		if(!isUnique){
+			uniqueAcids.push(currentAcid);
+		}
 	}
 }
-
-
-
+function isEqual(acid){
+	if(this===acid){
+		return true;
+	}
+	return false;
+}
+*/
