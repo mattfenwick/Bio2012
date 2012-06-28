@@ -49,7 +49,7 @@
 			}
 		}
 		deepEqual(spaces, false);
-	})
+	});
 	
 	test("load sequence with correct string", function() {
 		var seq2 = "A A A A A";
@@ -63,7 +63,16 @@
 		var aas=createOneLetterLookup(aminoAcidsReference);
 		var acids =loadSequence(seq);
 		deepEqual(((acids[0].weight)*5), getMolecularWeight(acids));
-	})
+	});
+	
+	test("check weightPercent function", function(){
+		var seq = "AAAAA";
+		var aas=createOneLetterLookup(aminoAcidsReference);
+		var acidseq =loadSequence(seq);
+		var acid = acidseq[0];
+		deepEqual((100.00), calcWeightPercentage(acidseq,acid));
+		
+	});
      
   });
 </script>

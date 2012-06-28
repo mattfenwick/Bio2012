@@ -78,8 +78,7 @@ function loadSequence(seq) {
 function createOneLetterLookup(aminoAcids){
 	var i,allLetters={};
 	for(i =0; i<aminoAcids.length;i++){
-		allLetters[aminoAcids[i].oneLett]=aminoAcids[i];
-		
+		allLetters[aminoAcids[i].oneLett]=aminoAcids[i];	
 	}
 	return allLetters;
 }
@@ -87,15 +86,26 @@ function createOneLetterLookup(aminoAcids){
 function getMolecularWeight(aminoAcids) {
 	var totalWeight = 0,i,acid,acidWeight;
 	for (i = 0; i < aminoAcids.length; i++) {
-
 		 acidWeight = aminoAcids[i].weight;
-		totalWeight += acidWeight;
+		 totalWeight += acidWeight;
 	}
 	return totalWeight;
 }
 
-function calcWeightPercentage(a) {
-
+function calcWeightPercentage(acidseq,acid) {
+    var length = acidseq.length;
+    var weight = acid.weight;
+    var totalWeight=getMolecularWeight(acidseq);
+    var i,numOfAcid=0;totalAcidWeight=0,unRounded=0,finalPercent=0;
+    for(i = 0; i<length; i++){
+    	if(acidseq[i]===acid){
+    		numOfAcid++;
+    	}
+    }
+    totalAcidWeight = numOfAcid*weight;
+    unRounded= (totalAcidWeight/totalWeight)*100;
+    finalPercent = unRounded.toPrecision(3);
+    return finalPercent;
 }
 
 var analyzer = {

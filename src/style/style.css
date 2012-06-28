@@ -1,16 +1,106 @@
-html, body {
-
+html{
+background-color: #f5f5f5
 }
-
+	
+	
+	body {
+ background-color:#bebebe
+ }
 
 
 div {
- 
-  border: solid red 5px;
-
+  border: ridge #00fa9a 5px;
 }
-#stats{
-	background-color: #fafad2; 
-	}
 
+
+#stats{
+	background-color: #e0eee0;
+	width: 200px 
+}
+
+
+#input{
+	background-color: #f0fff0;
+	width: 200px
+}
+
+
+#Amino{
+	background-color: #c1cdc1;
+	width: 200px
+}
+
+
+#Amino2{
+	border:none
+	background-color: #c1cdc1
+}
+
+
+
+
+#AminoTable2{
+	border: white
+}
+
+
+#output{
+	border: white
+	
+}
+
+#AminoTable{
+	background-color: #efe;
+	border-collapse: collapse;
+	empty-cells: show;
+	border:ridge #00fa9a 5px;
+}
+
+
+#AminoTable{
+	text-align: left;
+	font-weight: bold;
+	font-size: 100%;
+	border-bottom: .2em solid #4ca;
+	margin-bottom: .5em;
+	float: left;
+}
+
+#AminoTable th,
+#AminoTable td {
+	text-align: right;
+	padding-right: .5em;
+}
+
+#capt{
+	text-align: left;
+}
+#capt2{
+	border: white;
+	font-weight: bold;
+}
+
+
+#capt3{text-align: left;}
+#AminoTable th {
+	font-weight: bold;
+	padding-left: .5em;
+}
+
+
+#AminoTable>thead>tr:first-child>th{
+	font-style: italic;
+	color:black;
+}
+
+
+#AminoTable td {
+	background-color: #cef;
+	padding: .5em .5em .5em 3em;
+}
+
+
+#AminoTable tbody th:after {
+	content: ":";
+}
 
