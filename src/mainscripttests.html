@@ -73,7 +73,26 @@
 		deepEqual((100.00), calcWeightPercentage(acidseq,acid));
 		
 	});
-     
+	
+	test("check All Weight Percent Function", function(){
+		var seq="AACA";
+		var aas=createOneLetterLookup(aminoAcidsReference);
+		var acidseq=loadSequence(seq);
+		var testObj ={A:aas.A,C:aas.C};
+		var AllWeights=getAllWeightPercentages(acidseq,testObj);
+		var AllWeightsTest = {Alanine:68.8,Cysteine:31.2};
+		deepEqual(AllWeights,AllWeightsTest);
+	})
+    
+	test("check All Weight Percent 2 Function", function(){
+		var seq="AACA";
+		var aas=createFullLetterLookup(aminoAcidsReference);
+		var acidseq=loadSequence(seq);
+		var testObj ={A:aas.A,C:aas.C};
+		var AllWeights=getAllWeightPercentages2(acidseq,aas);
+		var AllWeightsTest = {Alanine:68.8,Cysteine:31.2};
+		deepEqual(AllWeights,AllWeightsTest);
+	})
   });
 </script>
 
