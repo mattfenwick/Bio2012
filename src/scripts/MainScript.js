@@ -107,8 +107,12 @@ function calcWeightPercentage(acidseq,acid) {
     finalPercent = unRounded.toPrecision(3);
     return finalPercent;
 }
+function calcAllWeightPercentage(acidseq){
+	var i,allWeights=[];
+	for(i=0;i<acidseq.length;i++){
+		
+	}
+}
 
-var analyzer = {
-	load : loadSequence,
-	getWeight : getMolecularWeight,
-};
+
+

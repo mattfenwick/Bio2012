@@ -7,7 +7,8 @@ $(document).ready(function() {
             // this is a jQuery selector:  it finds the DOM element with id = 'protein'
         var sequence = $("#protein").val(),
             // this grabs some data from our model
-            aaPercs = model.getAAPercentages(sequence),
+        var acids = 
+            aaPercs = getWeighPercentage(sequence),
             aa,
             // this jQuery selector gets the 'tbody' element of the element with id = 'AminoTable'
             tbody = $("#AminoTable tbody");
