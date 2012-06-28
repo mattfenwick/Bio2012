@@ -1,6 +1,17 @@
 
 $(document).ready(function() {
 
+    
+    
+    $("#AminoTable tbody").toggle();
+
+    $("#AminoTable th").hover(function() {
+    
+        $("#AminoTable tbody").toggle('fast');
+    
+    });
+
+/*
 	// whenever somebody clicks on 'button1', we want the stats to be recalculated and displayed
     $("#button1").click(function() {
 
@@ -21,5 +32,5 @@ $(document).ready(function() {
             tbody.append("<tr><td>" + aa + "</td><td>" + aaPercs[aa] + "</td></tr>");
         }
     });
-    
+*/
 });
