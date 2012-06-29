@@ -1,4 +1,6 @@
 html{
+	margin: 0px;
+	padding: 0px;
 	height: 100%;
 background: rgb(255,255,255); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 81%, rgba(246,246,246,1) 100%); /* FF3.6+ */
@@ -11,6 +13,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 	
 body {
+	margin: 0px;
+	padding: 0px;
 	height: 100%;
  background: rgb(235,241,246); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(235,241,246,1) 0%, rgba(171,211,238,1) 50%, rgba(137,195,235,1) 85%, rgba(213,235,251,1) 100%); /* FF3.6+ */
@@ -39,7 +43,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', end
 #AminoTable{
 	float: right;
 	text-align: left;
-	border: solid 1px #bebebe;
+;
 }
 
 #AminoTable th,
@@ -52,6 +56,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', end
 #AminoTable td {
 	background-color: white;
 	font-size: 13px;
+	width: 20%;
 }
 
 
@@ -90,9 +95,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
 }
 
 #stats1{
-width: 21.2%;
 float: left;
-border: solid 1px #bebebe;
 text-align: center;
 background: rgb(242,246,248); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 84%, rgba(224,239,249,1) 100%); /* FF3.6+ */
@@ -105,9 +108,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', end
 }
 
 #stats2{
-width: 22%;
-float: right;
-border:solid 1px #bebebe;
+float: left;
 text-align: center;
 background: rgb(242,246,248); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 84%, rgba(224,239,249,1) 100%); /* FF3.6+ */
@@ -120,8 +121,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', end
 }
 
 #stats3{
-float: right;
-border: solid 1px #bebebe;
+float: left;
 text-align: center;
 background: rgb(242,246,248); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 84%, rgba(224,239,249,1) 100%); /* FF3.6+ */
@@ -131,11 +131,10 @@ background: -o-linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 5
 background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 84%,rgba(224,239,249,1) 100%); /* IE10+ */
 background: linear-gradient(to bottom, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 84%,rgba(224,239,249,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
-width: 21.9%}
+}
 
 #stats4{
 float: left;
-border: solid 1px #bebebe;
 text-align: center;
 background: rgb(242,246,248); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 84%, rgba(224,239,249,1) 100%); /* FF3.6+ */
@@ -145,10 +144,10 @@ background: -o-linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 5
 background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 84%,rgba(224,239,249,1) 100%); /* IE10+ */
 background: linear-gradient(to bottom, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 84%,rgba(224,239,249,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
-width:21.9%}
+}
 
 #n1{
-	border: solid 1px #bebebe;
+width: 20%;
 background: rgb(242,246,248); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 84%, rgba(224,239,249,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,246,248,1)), color-stop(50%,rgba(216,225,231,1)), color-stop(84%,rgba(181,198,208,1)), color-stop(100%,rgba(224,239,249,1))); /* Chrome,Safari4+ */
@@ -159,10 +158,14 @@ background: linear-gradient(to bottom, rgba(242,246,248,1) 0%,rgba(216,225,231,1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
 }
 #AminoTable2{
-float: right;
+float: left;
 
 }
 
+
 #AminoTable th{font-weight: normal;}
 
-#stats >div{height: 20px;}
+#stats >div{height: 20px;
+width: 20%;}
+
+#stats{width:100%;}
