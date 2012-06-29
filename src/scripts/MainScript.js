@@ -1,4 +1,7 @@
 //http://www.bioinformatics.org/sms/common_new.js	;
+var Statistics = (function()
+{
+	
 var sequence = "mennktsvds ksinnfevkt ihgsksvdsg iyldssykmd ypemgiciii nnknfhkstg mssrsgtdvd aanlretfmg lkyqvrnknd ltredilelm dsvskedhsk rssfvcvils hgdegviygt ngpvelkklt sffrgdycrs ltgkpklfii qacrgteldc gietdsgtde emacqkipve adflyaysta pgyyswrnsk dgswfiqslc smlklyahkl efmhiltrvn rkvatefesf sldstfhakk qipcivsmlt kelyfyh"
 var length = sequence.length;
 var sequenceType = typeOfSequence();
@@ -40,6 +43,7 @@ function AminoAcid(fullName, threeLett, oneLett, weight, property){
 	this.oneLett=oneLett;
 	this.threeLett=threeLett;
 	this.weight=weight;
+	this.property=property;
 }
 var aminoAcidsReference=[new AminoAcid("Alanine","Ala","A",89.09,"hydrophobic"),
 new AminoAcid("Cysteine", "Cys","C",121.15,"hydrophilic"),
@@ -148,28 +152,44 @@ function getAllWeightPercentages2(acidseq, fullLetterLookup) {
 function run(sequence){
 	var aminoAcids = loadSequence(sequence),oneLetterLookup=createOneLetterLookup(aminoAcidsReference),
 	fullLetterLookup = createFullLetterLookup(aminoAcidsReference),
-	finalObj=getAllWeightPercentages(aminoAcids);
-	return finalObj
+	finalObj=getAllWeightPercentages2(aminoAcids,fullLetterLookup);
+	return finalObj;
 }
 
-function calcNumHydrophobic()
-/*
- * 
- Might not need these functions
-function getUniqueAcids(acidSeq,oneLetterLookup){
-	var uniqueAcids=[],i,isUnique;
+function calcNumHydrophobic(acidseq){
+	var i,numHydrophobic=0,currentAcid;
 	for(i=0;i<acidseq.length;i++){
 		currentAcid=acidseq[i];
-		isUnique=unqueAcids.forEach(isEqual(acid))
-		if(!isUnique){
-			uniqueAcids.push(currentAcid);
+		if(currentAcid.property==="hydrophobic"){
+			numHydrophobic++;
 		}
 	}
+	return numHydrophobic;
 }
-function isEqual(acid){
-	if(this===acid){
-		return true;
+
+function calcNumHydrophilic(acidseq){
+	var i,numHydrophilic=0,currentAcid;
+	for(i=0;i<acidseq.length;i++){
+		currentAcid=acidseq[i];
+		if(currentAcid.property==="hydrophilic"){
+			numHydrophilic++;
+		}
 	}
-	return false;
+	return numHydrophilic;
 }
-*/
+
+return {
+	runWeights: run,
+	getMolecularWeight:getMolecularWeight,
+	calcNumHydrophobic:calcNumHydrophobic,
+	loadSequence:loadSequence,
+	calcWeightPercentage:calcWeightPercentage,
+	getAllWeightPercentages:getAllWeightPercentages,
+	getAllWeightPercentages2:getAllWeightPercentages2,
+	removeSpaces:removeSpaces,
+	aminoAcidsReference: aminoAcidsReference,
+	createOneLetterLookup:createOneLetterLookup,
+	createFullLetterLookup:createFullLetterLookup,
+	calcNumHydrophilic:calcNumHydrophilic
+	};
+})();
