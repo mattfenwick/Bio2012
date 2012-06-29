@@ -1,10 +1,6 @@
 //http://www.bioinformatics.org/sms/common_new.js	;
 var Statistics = (function()
 {
-	
-var sequence = "mennktsvds ksinnfevkt ihgsksvdsg iyldssykmd ypemgiciii nnknfhkstg mssrsgtdvd aanlretfmg lkyqvrnknd ltredilelm dsvskedhsk rssfvcvils hgdegviygt ngpvelkklt sffrgdycrs ltgkpklfii qacrgteldc gietdsgtde emacqkipve adflyaysta pgyyswrnsk dgswfiqslc smlklyahkl efmhiltrvn rkvatefesf sldstfhakk qipcivsmlt kelyfyh"
-var length = sequence.length;
-var sequenceType = typeOfSequence();
 
 /*Function: removes whitespace from protein sequence
  * Input: protein sequence with whitespace
@@ -24,18 +20,6 @@ function removeSpaces(seq) {
  * Function: determines the format of protein sequence
  * Output:returns 1 if one letter codes are used, 3 if three letter codes are used, and 0 if full names are used
  */
-function typeOfSequence() {
-	if (sequence.substring(0, 1) === "M") {
-		return 1;
-	}
-
-	if (sequence.substring(0, 4) === "Met") {
-		return 3;
-	}
-	if (sequence.substring(0, 11) === "Methionine") {
-		return 0;
-	}
-}
 
 
 function AminoAcid(fullName, threeLett, oneLett, weight, property){
@@ -178,6 +162,28 @@ function calcNumHydrophilic(acidseq){
 	return numHydrophilic;
 }
 
+function calcNumPositive(acidseq){
+	var i,numPositive=0,currentAcid;
+	for(i=0;i<acidseq.length;i++){
+		currentAcid=acidseq[i];
+		if(currentAcid.property==="positive"){
+			numPositive++;
+		}
+	}
+	return numPositive;
+}
+
+function calcNumNegative(acidseq){
+	var i,numNegative=0,currentAcid;
+	for(i=0;i<acidseq.length;i++){
+		currentAcid=acidseq[i];
+		if(currentAcid.property==="negative"){
+			numNegative++;
+		}
+	}
+	return numNegative;
+}
+
 return {
 	runWeights: run,
 	getMolecularWeight:getMolecularWeight,
@@ -190,6 +196,8 @@ return {
 	aminoAcidsReference: aminoAcidsReference,
 	createOneLetterLookup:createOneLetterLookup,
 	createFullLetterLookup:createFullLetterLookup,
-	calcNumHydrophilic:calcNumHydrophilic
+	calcNumHydrophilic:calcNumHydrophilic,
+	calcNumPositive:calcNumPositive,
+	calcNumNegative:calcNumNegative
 	};
 })();
