@@ -133,7 +133,7 @@ function getAllWeightPercentages2(acidseq, fullLetterLookup) {
 }
 
 //when called, takes a string protein sequence and outputs an object with amino acid weight percentages
-function run(sequence){
+function runWeights(sequence){
 	var aminoAcids = loadSequence(sequence),oneLetterLookup=createOneLetterLookup(aminoAcidsReference),
 	fullLetterLookup = createFullLetterLookup(aminoAcidsReference),
 	finalObj=getAllWeightPercentages2(aminoAcids,fullLetterLookup);
@@ -185,7 +185,7 @@ function calcNumNegative(acidseq){
 }
 
 return {
-	runWeights: run,
+	runWeights: runWeights,
 	getMolecularWeight:getMolecularWeight,
 	calcNumHydrophobic:calcNumHydrophobic,
 	loadSequence:loadSequence,
