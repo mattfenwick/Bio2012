@@ -20,8 +20,18 @@ $(document).ready(function() {
             aaPercs = Statistics.runWeights(sequence),
             aa,
             // this jQuery selector gets the 'tbody' element of the element with id = 'AminoTable'
-            tbody = $("#AminoTable tbody");
-        
+            tbody = $("#AminoTable tbody"),
+            acidseq=Statistics.loadSequence(sequence);
+            weight=$("#weight"),
+            length=$("#length"),
+            hydrophilic=$("#hydrophilic"),
+            hydrophobic=$("#hydrophobic"),
+            numHydrophobic=(Statistics.calcNumHydrophilic(acidseq))/acidseq.length,
+            numHydrophilic=(Statistics.calcNumHydrophobic(acidseq))/acidseq.length;
+        weight.text((Statistics.getMolecularWeight(acidseq)).toPrecision(6));
+        length.text(sequence.length);
+        hydrophilic.text(numHydrophobic.toPrecision(4)*100);
+        hydrophobic.text(numHydrophilic.toPrecision(4)*100);
         // get rid of the old data ...
         tbody.empty();
         // and and in the new
@@ -29,5 +39,6 @@ $(document).ready(function() {
         	// make one row for each amino acid
             tbody.append("<tr><td>" + aa + "</td><td>" + aaPercs[aa] + "</td></tr>");
         }
+       
     });
 });
