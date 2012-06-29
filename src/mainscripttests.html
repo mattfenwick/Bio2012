@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Tests</title>
+  <link href="style/qunit.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jslibs/jquery1.7.2.js"></script>
+  <script type="text/javascript" src="jslibs/qunit.js"></script>
+  <script type="text/javascript" src="scripts/MainScript.js"></script>
+ </head>
+
+
+<script>
+  $(document).ready(function(){
+	
+	
+	module("MainScript");
+	
+	test("example of a passing test", function() {
+	
+	  ok(1, "this test passes");
+	
+	});
+	
+	test("remove spaces", function() {
+	
+	  var str1 = " a b c d    e  ";
+	  equal("abcde", Statistics.removeSpaces(str1), "leading, trailing, and internal spaces removed");
+	
+	});
+	
+	test("load sequence", function() {
+	  
+	  var seq1 = "MATT";
+	  var aas = Statistics.createOneLetterLookup(Statistics.aminoAcidsReference);
+	  
+	  deepEqual([aas["M"], aas["A"], aas["T"], aas["T"]], Statistics.loadSequence(seq1));
+	
+	});
+    
+	test("check if removeSpaces is working in load Sequence", function(){
+		var seq="ME EN N K";
+		var aas = Statistics.createOneLetterLookup(Statistics.aminoAcidsReference);
+		var seq1 = Statistics.removeSpaces(seq);
+		var i;spaces=false;
+		for(i = 0; i<seq1.length; i++){
+			if(seq1[i]===" "){
+				throw new Error("space found in seq1");
+				spaces=true;
+			}
+		}
+		deepEqual(spaces, false);
+	});
+	
+	test("load sequence with correct string", function() {
+		var seq2 = "A A A A A";
+        var aas = Statistics.createOneLetterLookup(Statistics.aminoAcidsReference);
+        deepEqual([aas["A"],aas["A"], aas["A"], aas["A"], aas["A"]], Statistics.loadSequence(seq2));
+        
+	});
+	
+	test("check molecularWeight", function(){
+		var seq = "AAAAA";
+		var aas=Statistics.createOneLetterLookup(Statistics.aminoAcidsReference);
+		var acids =Statistics.loadSequence(seq);
+		deepEqual(((acids[0].weight)*5), Statistics.getMolecularWeight(acids));
+	});
+	
+	test("check weightPercent function", function(){
+		var seq = "AAAAA";
+		var aas=Statistics.createOneLetterLookup(Statistics.aminoAcidsReference);
+		var acidseq =Statistics.loadSequence(seq);
+		var acid = acidseq[0];
+		deepEqual((100.00), Statistics.calcWeightPercentage(acidseq,acid));
+		
+	});
+	
+	test("check All Weight Percent Function", function(){
+		var seq="AACA";
+		var aas=Statistics.createOneLetterLookup(Statistics.aminoAcidsReference);
+		var acidseq=Statistics.loadSequence(seq);
+		var testObj ={A:aas.A,C:aas.C};
+		var AllWeights=Statistics.getAllWeightPercentages(acidseq,testObj);
+		var AllWeightsTest = {Alanine:68.8,Cysteine:31.2};
+		deepEqual(AllWeights,AllWeightsTest);
+	})
+    
+	test("check All Weight Percent 2 Function", function(){
+		var seq="AACA";
+		var aas=Statistics.createFullLetterLookup(Statistics.aminoAcidsReference);
+		var acidseq=Statistics.loadSequence(seq);
+		var testObj ={A:aas.A,C:aas.C};
+		var AllWeights=Statistics.getAllWeightPercentages2(acidseq,aas);
+		var AllWeightsTest = {Alanine:68.8,Cysteine:31.2};
+		deepEqual(AllWeights,AllWeightsTest);
+	})
+	
+	test("checking getHydrophobic residues method",function(){
+		var seq = "AACADFGY";
+		var acidseq = Statistics.loadSequence(seq);
+		var result = Statistics.calcNumHydrophobic(acidseq);
+		deepEqual(5,result);
+	})
+	
+	test("checking getHydrophobic residues method",function(){
+		var seq = "AACADFGY";
+		var acidseq = Statistics.loadSequence(seq);
+		var result = Statistics.calcNumHydrophilic(acidseq);
+		deepEqual(5,result);
+	})
+	
+  });
+</script>
+
+
+<body>
+ <h1 id="qunit-header">QUnit example</h1>
+ <h2 id="qunit-banner"></h2>
+ <div id="qunit-testrunner-toolbar"></div>
+ <h2 id="qunit-userAgent"></h2>
+ <ol id="qunit-tests"></ol>
+ <div id="qunit-fixture">test markup, will be hidden</div>
+</body>
+
+</html>
