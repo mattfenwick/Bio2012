@@ -152,7 +152,7 @@ function run(sequence){
 	return finalObj
 }
 
-function calc
+function calcNumHydrophobic()
 /*
  * 
  Might not need these functions

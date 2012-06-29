@@ -11,15 +11,13 @@ $(document).ready(function() {
     
     });
 
-/*
 	// whenever somebody clicks on 'button1', we want the stats to be recalculated and displayed
     $("#button1").click(function() {
 
             // this is a jQuery selector:  it finds the DOM element with id = 'protein'
         var sequence = $("#protein").val(),
-            // this grabs some data from our model
-        var acids = 
-            aaPercs = getWeighPercentage(sequence),
+            // this grabs some data from our model 
+            aaPercs = run(sequence),
             aa,
             // this jQuery selector gets the 'tbody' element of the element with id = 'AminoTable'
             tbody = $("#AminoTable tbody");
@@ -32,5 +30,4 @@ $(document).ready(function() {
             tbody.append("<tr><td>" + aa + "</td><td>" + aaPercs[aa] + "</td></tr>");
         }
     });
-*/
 });
