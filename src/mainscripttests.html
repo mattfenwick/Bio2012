@@ -129,10 +129,17 @@
 	})
 	
  test("check find Codon string function",function(){
- 		var seq="GCU";
- 		var testAmino=Statistics.aminoAcidsReference[0];
- 		deepEqual(testAmino, Statistics.findCodonAminoAcid(seq));
+ 		var seq="GAU";
+ 		var testAmino=Statistics.aminoAcidsReference[2];
+ 		deepEqual(testAmino,Statistics.findCodonAminoAcid(seq));
  	})
+ 	
+ 	test("check codon to protein function", function(){
+ 		var codonArray=["GCU","UGU","GAU"];
+ 		var tst=[Statistics.aminoAcidsReference[0],Statistics.aminoAcidsReference[1],Statistics.aminoAcidsReference[2]];
+ 		deepEqual(tst,Statistics.convertCodonToProtein(codonArray));
+ 	});
+ 	
   });
 </script>
 

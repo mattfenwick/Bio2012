@@ -32,7 +32,7 @@ var Statistics = (function () {
         this.codons = codons;
     }
     var aminoAcidsReference = [new AminoAcid("Alanine", "Ala", "A", 89.09, "hydrophobic",["GCU","GCC","GCA","GCG"]), 
-                               new AminoAcid("Cysteine", "Cys", "C", 121.15, "hydrophilic",["UGU,UGC"]), 
+                               new AminoAcid("Cysteine", "Cys", "C", 121.15, "hydrophilic",["UGU","UGC"]), 
                                new AminoAcid("Aspartic Acid", "Asp", "D", 133.10, "negative",["GAU","GAC"]), 
                                new AminoAcid("Glutamic Acid", "Glu", "E", 147.15, "negative",["GAA","GAG"]), 
                                new AminoAcid("Phenylalanine", "Phe", "F", 165.19, "hydrophobic",["UUU","UUC"]), 
@@ -208,22 +208,23 @@ var Statistics = (function () {
     
     function findCodonAminoAcid(codonString){
     	var i,currentAminoAcid,currentCodonArray,x;
-    	for(i=0;i<aminoAcidsReference;i++){
+    	for(i=0;i<aminoAcidsReference.length;i++){
     		currentAminoAcid=aminoAcidsReference[i];
     		currentCodonArray=currentAminoAcid.codons;
-    		for(x in currentCodonArray){
-    			if(codonString===x){
-    				return currentAminoAcid;
-    			}
-    		}
-    	}
+    	    if(currentCodonArray.indexOf(codonString)>-1){
+    		    return currentAminoAcid;
+    	    }
+        }
     }
     
     function convertCodonToProtein(codonArray){
-    	var i;aminoAcidArray;
+    	var i,aminoAcidArray=[],currentCodonString,currentAminoAcid;
     	for(i=0;i<codonArray.length;i++){
-    		
+    		currentCodonString=codonArray[i];
+    		currentAminoAcid=findCodonAminoAcid(currentCodonString);
+    		aminoAcidArray.push(currentAminoAcid);
     	}
+    	return aminoAcidArray;
     }
 
     return {
@@ -242,7 +243,8 @@ var Statistics = (function () {
         calcNumPositive: calcNumPositive,
         calcNumNegative: calcNumNegative,
         loadCodon:loadCodon,
-        findCodonAminoAcid:findCodonAminoAcid
+        findCodonAminoAcid:findCodonAminoAcid,
+        convertCodonToProtein:convertCodonToProtein
     };
     
     
