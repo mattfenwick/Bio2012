@@ -226,6 +226,24 @@ var Statistics = (function () {
     	}
     	return aminoAcidArray;
     }
+    
+    function capCodon(codonSeq){
+    	var newString=codonSeq,lenght=newString.length;
+    	if(codonSeq.substring(0,4)==="AUG"){
+    		newString=codonSeq.substring(4);
+    		length=newString.length;
+    	}
+    	if(newString.substring(length-4)==="UAA"||newString.substring(length-4)==="UAG"||newString.substring(length-4)==="UGG"){
+    		newString=newString.substring(0,newString.length-4);
+    	}
+    	
+    }
+    
+    function runCodon(sequence){
+    	var seq=removeSpaces(sequence),codonArray=[],proteinSeq;
+    	codonArray=loadCodon(sequence);
+    	
+    }
 
     return {
         runWeights: runWeights,
