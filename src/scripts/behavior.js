@@ -25,14 +25,22 @@ $(document).ready(function () {
             length = $("#length"),
             hydrophilic = $("#hydrophilic"),
             hydrophobic = $("#hydrophobic"),
+            positive = $("#positive"),
+            negative = $("#negative"),
             numHydrophobic = Statistics.calcNumHydrophilic(acidseq)*100 / acidseq.length,
             numHydrophilic = Statistics.calcNumHydrophobic(acidseq)*100 / acidseq.length,
             perHydrophobic = numHydrophobic.toPrecision(4),
-            perHydrophilic = numHydrophilic.toPrecision(4);
+            perHydrophilic = numHydrophilic.toPrecision(4),
+            numPositive = Statistics.calcNumPositive(acidseq)*100 / acidseq.length,
+            numNegative = Statistics.calcNumNegative(acidseq)*100 / acidseq.length,
+            perPostive = numPositive.toPrecision(4),
+            perNegative = numNegative.toPrecision(4);
         weight.text(Statistics.getMolecularWeight(acidseq).toPrecision(6));
         length.text(sequence.length);
         hydrophilic.text(perHydrophilic);
         hydrophobic.text(perHydrophobic);
+        positive.text(perHydrophilic);
+        negative.text(perHydrophobic);
         // get rid of the old data ...
         tbody.empty();
         // and and in the new

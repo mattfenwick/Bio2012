@@ -23,14 +23,34 @@ var Statistics = (function () {
      */
 
 
-    function AminoAcid(fullName, threeLett, oneLett, weight, property) {
+    function AminoAcid(fullName, threeLett, oneLett, weight, property, codons) {
         this.fullName = fullName;
         this.oneLett = oneLett;
         this.threeLett = threeLett;
         this.weight = weight;
         this.property = property;
+        this.codons = codons;
     }
-    var aminoAcidsReference = [new AminoAcid("Alanine", "Ala", "A", 89.09, "hydrophobic"), new AminoAcid("Cysteine", "Cys", "C", 121.15, "hydrophilic"), new AminoAcid("Aspartic Acid", "Asp", "D", 133.10, "negative"), new AminoAcid("Glutamic Acid", "Glu", "E", 147.15, "negative"), new AminoAcid("Phenylalanine", "Phe", "F", 165.19, "hydrophobic"), new AminoAcid("Glycine", "Gly", "G", 75.07, "hydrophobic"), new AminoAcid("Histidine", "His", "H", 155.16, "positive"), new AminoAcid("Isoleucine", "Ile", "I", 131.17, "hydrophobic"), new AminoAcid("Lysine", "Lys", "K", 146.19, "positive"), new AminoAcid("Leucine", "Leu", "L", 131.17, "hydrophobic"), new AminoAcid("Methionine", "Met", "M", 149.21, "hydrophobic"), new AminoAcid("Asparagine", "Asn", "N", 132.12, "hydrophilic"), new AminoAcid("Proline", "Pro", "P", 115.13, "hydrophobic"), new AminoAcid("Glutamine", "Gln", "Q", 146.15, "hydrophilic"), new AminoAcid("Arginine", "Arg", "R", 174.20, "positive"), new AminoAcid("Serine", "Ser", "S", 105.09, "hydrophilic"), new AminoAcid("threonine", "Thr", "T", 119.12, "hydrophilic"), new AminoAcid("Valine", "Val", "V", 117.15, "hydrophobic"), new AminoAcid("Tryptophan", "Trp", "W", 204.23, "tryptophan"), new AminoAcid("Tyrosine", "Tyr", "Y", 101.19, "hydrophilic")];
+    var aminoAcidsReference = [new AminoAcid("Alanine", "Ala", "A", 89.09, "hydrophobic",["GCU","GCC","GCA","GCG"]), 
+                               new AminoAcid("Cysteine", "Cys", "C", 121.15, "hydrophilic",["UGU,UGC"]), 
+                               new AminoAcid("Aspartic Acid", "Asp", "D", 133.10, "negative",["GAU","GAC"]), 
+                               new AminoAcid("Glutamic Acid", "Glu", "E", 147.15, "negative",["GAA","GAG"]), 
+                               new AminoAcid("Phenylalanine", "Phe", "F", 165.19, "hydrophobic",["UUU","UUC"]), 
+                               new AminoAcid("Glycine", "Gly", "G", 75.07, "hydrophobic",["GGU","GGC","GGA","GGG"]), 
+                               new AminoAcid("Histidine", "His", "H", 155.16, "positive",["CAU","CAC"]), 
+                               new AminoAcid("Isoleucine", "Ile", "I", 131.17, "hydrophobic",["AUU","AUC","AUA"]), 
+                               new AminoAcid("Lysine", "Lys", "K", 146.19, "positive",["AAA","AAG"]), 
+                               new AminoAcid("Leucine", "Leu", "L", 131.17, "hydrophobic",["UUA","UUG","CUU","CUC","CUA","CUG"]), 
+                               new AminoAcid("Methionine", "Met", "M", 149.21, "hydrophobic",["AUG"]), 
+                               new AminoAcid("Asparagine", "Asn", "N", 132.12, "hydrophilic",["AAU","AAC"]), 
+                               new AminoAcid("Proline", "Pro", "P", 115.13, "hydrophobic",["CCU","CCC","CCA","CCG"]), 
+                               new AminoAcid("Glutamine", "Gln", "Q", 146.15, "hydrophilic",["GAA","CAG"]), 
+                               new AminoAcid("Arginine", "Arg", "R", 174.20, "positive",["CGU","CGC","CGA","CGG","AGA","AGG"]), 
+                               new AminoAcid("Serine", "Ser", "S", 105.09, "hydrophilic",["UCU","UCC","UCA","UCG","AGU","AGC"]), 
+                               new AminoAcid("threonine", "Thr", "T", 119.12, "hydrophilic",["ACU","ACC","ACA","ACG"]), 
+                               new AminoAcid("Valine", "Val", "V", 117.15, "hydrophobic",["GUU","GUC","GUA","GUG"]), 
+                               new AminoAcid("Tryptophan", "Trp", "W", 204.23, "tryptophan",["UGG"]), 
+                               new AminoAcid("Tyrosine", "Tyr", "Y", 101.19, "hydrophilic",["UAU","UAC"])];
 
     //Transfers string sequence into an array of amino acids
     function loadSequence(seq) {
@@ -194,6 +214,34 @@ var Statistics = (function () {
         calcNumNegative: calcNumNegative
     };
     
+    function loadCodon(sequence){
+    	var i,codonArray=[],currentCodon;
+    	for(i=0;i<sequence.length;i+=3){
+    		currentCodon=sequence.substring(i,i+3);
+    		codonArray.push(currentCodon);
+    	}
+    	return codonArray;
+    }
+    
+    function findCodonAminoAcid(codonString){
+    	var i,currentAminoAcid,currentCodonArray,x;
+    	for(i=0;i<aminoAcidsReference;i++){
+    		currentAminoAcid=aminoAcidsReference[i];
+    		currentCodonArray=currentAminoAcid.codons;
+    		for(x in currentCodonArray){
+    			if(codonString===x){
+    				return currentAminoAcid;
+    			}
+    		}
+    	}
+    }
+    
+    function convertCodonToProtein(codonArray){
+    	var i;aminoAcidArray;
+    	for(i=0;i<codonArray.length;i++){
+    		
+    	}
+    }
     
     
 })();
