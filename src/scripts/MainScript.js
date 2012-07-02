@@ -193,4 +193,7 @@ var Statistics = (function () {
         calcNumPositive: calcNumPositive,
         calcNumNegative: calcNumNegative
     };
+    
+    
+    
 })();
