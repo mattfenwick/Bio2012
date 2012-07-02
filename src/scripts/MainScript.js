@@ -196,23 +196,6 @@ var Statistics = (function () {
         }
         return numNegative;
     }
-
-    return {
-        runWeights: runWeights,
-        getMolecularWeight: getMolecularWeight,
-        calcNumHydrophobic: calcNumHydrophobic,
-        loadSequence: loadSequence,
-        calcWeightPercentage: calcWeightPercentage,
-        getAllWeightPercentages: getAllWeightPercentages,
-        getAllWeightPercentages2: getAllWeightPercentages2,
-        removeSpaces: removeSpaces,
-        aminoAcidsReference: aminoAcidsReference,
-        createOneLetterLookup: createOneLetterLookup,
-        createFullLetterLookup: createFullLetterLookup,
-        calcNumHydrophilic: calcNumHydrophilic,
-        calcNumPositive: calcNumPositive,
-        calcNumNegative: calcNumNegative
-    };
     
     function loadCodon(sequence){
     	var i,codonArray=[],currentCodon;
@@ -242,6 +225,27 @@ var Statistics = (function () {
     		
     	}
     }
+
+    return {
+        runWeights: runWeights,
+        getMolecularWeight: getMolecularWeight,
+        calcNumHydrophobic: calcNumHydrophobic,
+        loadSequence: loadSequence,
+        calcWeightPercentage: calcWeightPercentage,
+        getAllWeightPercentages: getAllWeightPercentages,
+        getAllWeightPercentages2: getAllWeightPercentages2,
+        removeSpaces: removeSpaces,
+        aminoAcidsReference: aminoAcidsReference,
+        createOneLetterLookup: createOneLetterLookup,
+        createFullLetterLookup: createFullLetterLookup,
+        calcNumHydrophilic: calcNumHydrophilic,
+        calcNumPositive: calcNumPositive,
+        calcNumNegative: calcNumNegative,
+        loadCodon:loadCodon,
+        findCodonAminoAcid:findCodonAminoAcid
+    };
+    
+    
     
     
 })();

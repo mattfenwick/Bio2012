@@ -89,6 +89,9 @@ background: linear-gradient(to bottom, rgba(197,222,234,1) 0%,rgba(138,187,215,1
 	float: right;
 }
 
+#stats{
+	width: 1456px;
+}
 
 #filler{
 	width:33%
@@ -210,14 +213,11 @@ font-size:14px;
 text-align:center;
 }
 
-#stats{
-	width: 100%;
-}
+
 #stats >div{height: 20px;
 width: 14.19753%;
 border: solid black 1px;}
 
-#stats{width:100%;}
 
 #Projectbox{width:20%;
 height:500px;

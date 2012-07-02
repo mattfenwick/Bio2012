@@ -125,9 +125,14 @@
 	test("check loadCodon function",function(){
 		var seq="AUGCGAGCGCCCUAGUUU";
 		var codonArrayTest=["AUG","CGA","GCG","CCC","UAG","UUU"];
-		deepEqual(codonArrayTest, loadCodon(seq));
+		deepEqual(codonArrayTest, Statistics.loadCodon(seq));
 	})
 	
+ test("check find Codon string function",function(){
+ 		var seq="GCU";
+ 		var testAmino=Statistics.aminoAcidsReference[0];
+ 		deepEqual(testAmino, Statistics.findCodonAminoAcid(seq));
+ 	})
   });
 </script>
 
