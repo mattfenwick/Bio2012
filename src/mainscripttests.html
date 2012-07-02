@@ -122,6 +122,12 @@
 		deepEqual(5,result);
 	})
 	
+	test("check loadCodon function",function(){
+		var seq="AUGCGAGCGCCCUAGUUU";
+		var codonArrayTest=["AUG","CGA","GCG","CCC","UAG","UUU"];
+		deepEqual(codonArrayTest, loadCodon(seq));
+	})
+	
   });
 </script>
 

@@ -6,6 +6,7 @@
 <script type="text/javascript" src="jslibs/jquery1.7.2.js"></script>
 <script type="text/javascript" src="scripts/MainScript.js"> </script>
 <script type="text/javascript" src="scripts/behavior.js"> </script>
+<script type="text/javascript" src="../JmolJar/Jmol.js"></script>
 </head>
 <body>
 	<div id="division1">
@@ -19,10 +20,16 @@
 			<button id="button1">Analyze</button>
 		</div>
 		<br></br> <br></br>
-	
 <div id="stats">
-		<div id="stats1">Molecular Weight:</div>
-		<div id="stats2">Percent of Amino Acids (Hydrophobic):</div>
+		<div id="stats1">Molecular Weight:
+		<span id="weight"></span>
+		</div>
+		<div id="stats2">Hydrophobic Residues:
+		<span id="hydrophobic"></span>%
+		</div>
+		<div id="stats3">Hydrophilic Residues:
+		<span id="hydrophilic"></span>%
+		</div>
 		<div id="AminoTable2">
 			<table id="AminoTable">
 
@@ -107,32 +114,52 @@
 			
 		</div>
 		
-		<div id="stats3">Percent of Amino Acids (Hydrophilic):</div>
-		<div id="stats4">Protein Length:</div>
+
+		<div id="stats5">Positive Residues:
+		<span id="positive"></span>%
+		</div>
+		<div id="stats6">Negative Residues:
+		<span id="negative"></span>%
+		</div>
+		<div id="stats4">Protein Length:
+		<span id="length"></span> Residues
+		
+		</div>
 </div>
 			</div>
+		
 			<br></br>
 			<br></br>
 			<br></br>
-			<div id="zoo">About the Application</div>
-			<div id="Projectbox"> This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdasThis application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas This application was created with a collaborative effort from Jack Kim, Janyu Bhatt, and Matt Fenwick. All put a lot of hard work into making this application function properly and we experienced a lot of trouble along the way. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack. I am Jack.
-			Jack	 Jack Jack Jack Jack sddada sdsdad asdasdas sdasdasdasda sdasdsada asdasdas asdasdas sdas sdasd asdasadasdas sdas	</div>
+			<div id="mole">
+		type here
+			
+			
+	<div id="jmol">
+		<script type="text/javascript">
+       jmolInitialize("../JMolJar", "JmolAppletSigned.jar");
+       jmolSetAppletColor("#000000");
+       jmolApplet(500,"load=1crn");
+       jmolScript("set loadFormat = http://www.rcsb.org/pdb/files/%FILE.pdb.gz");
+       jmolScript("load =1d66");
+       
+    </script>
+    <br></br>
+    	Enter PDB 4-lettered ID:  <br></br> <input id="jmolID" />
+			<button id="button2">Load</button>
+			<script type="text/javascript">
+			$("#button2").click(function () {
+				var id=$("#jmolID").val();
+				var command ="load ="+id;
+				jmolScript(command)
+			});
+			</script>
+    </div>
 	</div>
 	</div>
 	</div>
+	
+   
 
 </body>
 
