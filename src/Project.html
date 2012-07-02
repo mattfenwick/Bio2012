@@ -137,9 +137,19 @@
        jmolSetAppletColor("#000000");
        jmolApplet(500,"load=1crn");
        jmolScript("set loadFormat = http://www.rcsb.org/pdb/files/%FILE.pdb.gz");
-       jmolCommandInput("press",60,"jmolScriptLine","ScriptLine");
        jmolScript("load =1d66");
+       
     </script>
+    <br></br>
+    	Enter PDB 4-lettered ID:  <br></br> <input id="jmolID" />
+			<button id="button2">Load</button>
+			<script type="text/javascript">
+			$("#button2").click(function () {
+				var id=$("#jmolID").val();
+				var command ="load ="+id;
+				jmolScript(command)
+			});
+			</script>
     </div>
 	</div>
 	</div>
