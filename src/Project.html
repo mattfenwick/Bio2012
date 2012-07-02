@@ -6,6 +6,7 @@
 <script type="text/javascript" src="jslibs/jquery1.7.2.js"></script>
 <script type="text/javascript" src="scripts/MainScript.js"> </script>
 <script type="text/javascript" src="scripts/behavior.js"> </script>
+<script type="text/javascript" src="../JmolJar/Jmol.js"></script>
 </head>
 <body>
 	<div id="division1">
@@ -19,7 +20,6 @@
 			<button id="button1">Analyze</button>
 		</div>
 		<br></br> <br></br>
-	
 <div id="stats">
 		<div id="stats1">Molecular Weight:
 		<span id="weight"></span>
@@ -119,6 +119,7 @@
 		</div>
 </div>
 			</div>
+		
 			<br></br>
 			<br></br>
 			<br></br>
@@ -141,6 +142,15 @@
 	</div>
 	</div>
 	</div>
+		<script type="text/javascript">
+       jmolInitialize("../JMolJar", "JmolAppletSigned.jar");
+       jmolSetAppletColor("#000000");
+       jmolApplet(500,"load=1crn");
+       jmolScript("set loadFormat = http://www.rcsb.org/pdb/files/%FILE.pdb.gz");
+       jmolCommandInput("press",60,"jmolScriptLine","ScriptLine");
+       jmolScript("load =1d66");
+       jmolSetApppletCssClass("Jmol");
+    </script>
 
 </body>
 
