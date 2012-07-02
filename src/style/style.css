@@ -1,5 +1,5 @@
 html{
-	margin: 100px;
+	margin: 100.1px;
 	margin-top:-20px;
 	padding: 0px;
 	height: 100%;
@@ -16,7 +16,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', end
 }
 	
 body {
-	min-width: 1444px;
+	min-width: 1456px;
 	margin: 0px;
 	padding: 0px;
 	height: 100%;
@@ -212,7 +212,7 @@ text-align:center;
 	width: 100%;
 }
 #stats >div{height: 20px;
-width: 206.9899999999999px;
+width: 14.19753%;
 border: solid black 1px;}
 
 #stats{width:100%;}
