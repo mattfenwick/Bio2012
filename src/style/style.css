@@ -1,8 +1,14 @@
 html{
+<<<<<<< HEAD
 	
 	margin: 98px;
 min-width:1463px;
 	margin-top:-20px;
+=======
+	margin: 104px;
+	margin-top:-20px;
+	padding: 0px;
+>>>>>>> 4466e40c5f8cfd54547fd10bb8e9f928b0efd90b
 	height: 100%;
 	background: rgb(167,207,223); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(167,207,223,1) 0%, rgba(35,83,138,1) 100%); /* FF3.6+ */
@@ -19,7 +25,6 @@ body {
 	min-width: 1463px;
 	margin: 0px;
 	padding: 0px;
-	height: 100%;
 background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
@@ -28,7 +33,11 @@ background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 
 background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */}
 
+<<<<<<< HEAD
 #stats{width: 100%;}
+=======
+#mole{text-align:center;}
+>>>>>>> 4466e40c5f8cfd54547fd10bb8e9f928b0efd90b
 
 #input{
 	width: 200px;
@@ -39,24 +48,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #AminoTable{
 	border-collapse: collapse;
 	empty-cells: show;
-	
-}
-
-
-#AminoTable{
 	float: right;
 	text-align: left;
-;
 }
 
-#AminoTable th,
 #AminoTable td {
-	text-align: right;
 	padding-right: .5em;
-}
-
-
-#AminoTable td {
 	background-color: white;
 	font-size: 12px;
 	width: 270px;
@@ -76,12 +73,19 @@ background: linear-gradient(to bottom, rgba(197,222,234,1) 0%,rgba(138,187,215,1
 
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4466e40c5f8cfd54547fd10bb8e9f928b0efd90b
 #input{
 	width: 55.9%;
 	float: right;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4466e40c5f8cfd54547fd10bb8e9f928b0efd90b
 #filler{
 	width:33%
 	float: left;
@@ -133,6 +137,8 @@ background: linear-gradient(to bottom, rgba(242,246,248,1) 0%,rgba(216,225,231,1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
 }
 
+#list{  background-color: #eeeeee; border: #dddddd 2px solid;
+width:450px;}
 #stats4{
 float: left;
 font-size:14px;
@@ -191,7 +197,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', end
 }
 #AminoTable2{
 float: left;
-
 }
 
 
@@ -208,6 +213,7 @@ border:solid 1px black;
 border:;}
 
 
+<<<<<<< HEAD
 
 #zoo{text-align:center;
 border: solid 1px black;
@@ -228,6 +234,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', end
 position: absolute;
 top: 250px;
 left: 990px;
+=======
+#jmol{float:right;
+position: absolute;
+top: 250px;
+left: 1030px;
+>>>>>>> 4466e40c5f8cfd54547fd10bb8e9f928b0efd90b
 }
-
-#mole: {width: 100%;}
