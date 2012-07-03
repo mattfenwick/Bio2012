@@ -52,8 +52,12 @@ $(document).ready(function () {
     });
     
     $("#buttonCodons").click(function () {
-    	var sequence=$("#codonSeq"),converted;
+    	var sequence=$("#codonSeq").val(),
+    	converted,
+    	result=$("#convertedSeq");
     	converted=Statistics.runCodon(sequence);
+    	result.text(converted)
+    	
     	
     });
 });

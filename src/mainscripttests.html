@@ -139,6 +139,18 @@
  		var tst=[Statistics.aminoAcidsReference[0],Statistics.aminoAcidsReference[1],Statistics.aminoAcidsReference[2]];
  		deepEqual(tst,Statistics.convertCodonToProtein(codonArray));
  	});
+	
+	test("capCodonFunction",function(){
+		var seq = "AUGCCCGCGUAA";
+		var seq2="CCCGCG";
+		deepEqual(seq2,Statistics.capCodon(seq));
+	})
+	
+	test("test runCodon",function(){
+		var sequence = "aug cgc ccc";
+		var converted = Statistics.runCodon(sequence);
+		deepEqual("RP",converted);
+	})
  	
   });
 </script>

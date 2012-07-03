@@ -198,11 +198,9 @@ var Statistics = (function () {
     }
     
     function loadCodon(sequence){
-    	var i,codonArray=[],currentCodon,seq;
-    	seq=removeSpaces(sequence);
-    	seq=seq.toUpperCase();
-    	for(i=0;i<sequence.length-3;i+=3){
-    		currentCodon=seq.substring(i,i+3);
+    	var i,codonArray=[],currentCodon;
+    	for(i=0;i<sequence.length;i+=3){
+    		currentCodon=sequence.substring(i,i+3);
     		if(!currentCodon){
     			throw new Error("extra codon asked for");
     		}
@@ -232,21 +230,37 @@ var Statistics = (function () {
     	return aminoAcidArray;
     }
     
+    function readAcidArray(acidArray){
+    	var acidSeq="",i;
+    	for(i=0;i<acidArray.length;i++){
+    		acidSeq+=acidArray[i].oneLett;
+    	}
+    	return acidSeq;
+    }
+    
     function capCodon(codonSeq){
-    	var newString=codonSeq,lenght=newString.length;
-    	if(codonSeq.substring(0,4)==="AUG"){
-    		newString=codonSeq.substring(4);
+    	var newString=codonSeq,length=newString.length;
+    	if(codonSeq.substring(0,3)==="AUG"){
+    		newString=codonSeq.substring(3);
     		length=newString.length;
     	}
-    	if(newString.substring(length-4)==="UAA"||newString.substring(length-4)==="UAG"||newString.substring(length-4)==="UGG"){
-    		newString=newString.substring(0,newString.length-4);
+    	if(newString.substring(length-3)==="UAA"||newString.substring(length-3)==="UAG"||newString.substring(length-3)==="UGG"){
+
+    		newString=newString.substring(0,newString.length-3);
     	}
+    	return newString;
     	
     }
     
     function runCodon(sequence){
-    	var codonArray=[],proteinSeq;
-    	codonArray=loadCodon(sequence);
+    	var codonArray=[],proteinSeq,seq,seq1,seq2,acidArray=[],acidSeq;
+    	seq=removeSpaces(sequence);
+    	seq1=seq.toUpperCase();
+    	seq2=capCodon(seq1);
+    	codonArray=loadCodon(seq2);
+    	acidArray=convertCodonToProtein(codonArray);
+    	acidSeq=readAcidArray(acidArray);
+    	return acidSeq;
     	
     }
 
@@ -267,7 +281,9 @@ var Statistics = (function () {
         calcNumNegative: calcNumNegative,
         loadCodon:loadCodon,
         findCodonAminoAcid:findCodonAminoAcid,
-        convertCodonToProtein:convertCodonToProtein
+        convertCodonToProtein:convertCodonToProtein,
+        capCodon:capCodon,
+        runCodon:runCodon
     };
     
     
