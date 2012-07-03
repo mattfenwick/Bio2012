@@ -30,7 +30,6 @@ background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */}
 
 #mole{text-align:center;}
-
 #input{
 	width: 200px;
 	text-align: left;
@@ -69,7 +68,6 @@ background: linear-gradient(to bottom, rgba(197,222,234,1) 0%,rgba(138,187,215,1
 	width: 55.9%;
 	float: right;
 }
-
 
 #filler{
 	width:33%
@@ -141,6 +139,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', end
 	float: left;
 	font-size:14px;
 	height: 20px;
+
 	text-align:center;
 background: rgb(242,246,248); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 84%, rgba(224,239,249,1) 100%); /* FF3.6+ */
@@ -194,12 +193,12 @@ text-align:center;
 
 #stats >div{height: 20px;
 width: 14.19753%;
-border:solid 1px black;
-}
+border:solid 1px black;}
 
 
 #jmol{float:right;
 position: absolute;
 top: 250px;
-left: 1030px;
+left: 990px;
+}
 
