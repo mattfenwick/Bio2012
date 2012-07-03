@@ -199,8 +199,24 @@ body {
 #list {
 	background-color: #eeeeee;
 	border: #dddddd 2px solid;
-	width: 450px;
+	width: 650px;
 	margin-left: 100px;
+	overflow:scroll;
+	height: 550px;
+	-webkit-box-shadow:5px 5px 5px #999999; 
+-moz-box-shadow: 5px 5px 5px #999999; 
+box-shadow:5px 5px 5px #999999; 
+}
+#codonConverter{
+	margin-left: 100px;
+}
+#convertedSeq{
+	background-color: #FFFFFF;
+	height: 75px;
+	width: 500px;
+	-webkit-box-shadow:5px 5px 5px #999999; 
+-moz-box-shadow: 5px 5px 5px #999999; 
+box-shadow:5px 5px 5px #999999; 
 }
 
 #stats4 {
@@ -338,4 +354,5 @@ body {
 	position: absolute;
 	top: 250px;
 	left: 990px;
+	
 }
