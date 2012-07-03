@@ -50,4 +50,10 @@ $(document).ready(function () {
         }
 
     });
+    
+    $("#buttonCodons").click(function () {
+    	var sequence=$("#codonSeq"),converted;
+    	converted=Statistics.runCodon(sequence);
+    	
+    });
 });
