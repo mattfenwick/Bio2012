@@ -46,11 +46,6 @@ body {
 		endColorstr='#00ffffff', GradientType=0 ); /* IE6-9 */
 }
 
-#wrapper{
-	margin:0px;
-	padding:0px;
-}
-
 #mole {
 	text-align: center;
 }
@@ -110,6 +105,12 @@ body {
 	float: right;
 }
 
+#filler4{
+	width:20px;
+	float:left;
+}
+
+#leftside{width:100px;}
 #stats1 {
 	float: left;
 	text-align: center;
@@ -194,10 +195,12 @@ body {
 		endColorstr='#e0eff9', GradientType=0 ); /* IE6-9 */
 }
 
+
 #list {
 	background-color: #eeeeee;
 	border: #dddddd 2px solid;
 	width: 450px;
+	margin-left: 100px;
 }
 
 #stats4 {
