@@ -33,14 +33,14 @@ $(document).ready(function () {
             perHydrophilic = numHydrophilic.toPrecision(4),
             numPositive = Statistics.calcNumPositive(acidseq)*100 / acidseq.length,
             numNegative = Statistics.calcNumNegative(acidseq)*100 / acidseq.length,
-            perPostive = numPositive.toPrecision(4),
+            perPositive = numPositive.toPrecision(4),
             perNegative = numNegative.toPrecision(4);
         weight.text(Statistics.getMolecularWeight(acidseq).toPrecision(6));
         length.text(sequence.length);
         hydrophilic.text(perHydrophilic);
         hydrophobic.text(perHydrophobic);
-        positive.text(perHydrophilic);
-        negative.text(perHydrophobic);
+        positive.text(perPositive);
+        negative.text(perNegative);
         // get rid of the old data ...
         tbody.empty();
         // and and in the new
@@ -55,6 +55,7 @@ $(document).ready(function () {
     	var sequence=$("#codonSeq").val(),
     	converted,
     	result=$("#convertedSeq");
+
     	converted=Statistics.runCodon(sequence);
     	result.text(converted)
     	
