@@ -1,8 +1,6 @@
 html{
-	margin: 103px;
+	margin: 104px;
 	margin-top:-20px;
-	
-	
 	padding: 0px;
 	height: 100%;
 	background: rgb(167,207,223); /* Old browsers */
@@ -21,7 +19,6 @@ body {
 	min-width: 1456px;
 	margin: 0px;
 	padding: 0px;
-	height: 100%;
 background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
@@ -30,7 +27,7 @@ background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 
 background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */}
 
-
+#mole{text-align:center;}
 
 #input{
 	width: 200px;
@@ -41,24 +38,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #AminoTable{
 	border-collapse: collapse;
 	empty-cells: show;
-	
-}
-
-
-#AminoTable{
 	float: right;
 	text-align: left;
-;
 }
 
-#AminoTable th,
 #AminoTable td {
-	text-align: right;
 	padding-right: .5em;
-}
-
-
-#AminoTable td {
 	background-color: white;
 	font-size: 12px;
 	width: 270px;
@@ -80,18 +65,11 @@ background: linear-gradient(to bottom, rgba(197,222,234,1) 0%,rgba(138,187,215,1
 
 }
 
-
-#division1{border: hidden
-}
-
 #input{
 	width: 55.9%;
 	float: right;
 }
 
-#stats{
-	width: 1456px;
-}
 
 #filler{
 	width:33%
@@ -144,6 +122,8 @@ background: linear-gradient(to bottom, rgba(242,246,248,1) 0%,rgba(216,225,231,1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
 }
 
+#list{  background-color: #eeeeee; border: #dddddd 2px solid;
+width:450px;}
 #stats4{
 float: left;
 font-size:14px;
@@ -203,7 +183,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', end
 }
 #AminoTable2{
 float: left;
-
 }
 
 
@@ -219,33 +198,8 @@ width: 14.19753%;
 border: solid black 1px;}
 
 
-#Projectbox{width:20%;
-height:500px;
-overflow:scroll;
-text-align: center;
-border: solid 1px black;
-font-size:14px;
-}
-
-#zoo{text-align:center;
-border: solid 1px black;
-font-size:14px;
-width:287px;
-height:20px;
-background: rgb(242,246,248); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 84%, rgba(224,239,249,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,246,248,1)), color-stop(50%,rgba(216,225,231,1)), color-stop(84%,rgba(181,198,208,1)), color-stop(100%,rgba(224,239,249,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 84%,rgba(224,239,249,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 84%,rgba(224,239,249,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 84%,rgba(224,239,249,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 84%,rgba(224,239,249,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
-}
-
 #jmol{float:right;
 position: absolute;
 top: 250px;
-left: 1050px;
+left: 1030px;
 }
-
-#mole: {width: 100%;}
