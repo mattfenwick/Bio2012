@@ -42,7 +42,9 @@ HTML acts as the skeleton that determines the content and structure of our webpa
 CSS stands for cascading style sheets-
 it allows us to design our webpage with our unique styles-determining colors, fonts, backgrounds, positioning...
 //the cool thing is that all of our styles are located in one sheet, so we can use the same styles...
-
+javascript is a programming language. In terms of our website, javascript is what gives the webpage function-the algorithm were written in javascript
+So to put it all together, we first wrote the HTML, then we used CSS style sheets to format and design it. Then we linked our javascript into the HTML to give it function.
+jmol is a java program that is a 3d viewer for macromolecules. At school, we used something similar to it called rasmol-jmol is similar to it. Molecular visualization software. 
 how this is done in real world
 future directions
 
@@ -56,9 +58,3 @@ what we did:
     designed a web app:
        -describe app, what it does
     learned about the interface between 
-
-mennktsvds ksinnfevkt ihgsksvdsg iyldssykmd ypemgiciii nnknfhkstg
-      mssrsgtdvd aanlretfmg lkyqvrnknd ltredilelm dsvskedhsk rssfvcvils
-      hgdegviygt ngpvelkklt sffrgdycrs ltgkpklfii qacrgteldc gietdsgtde
-      emacqkipve adflyaysta pgyyswrnsk dgswfiqslc smlklyahkl efmhiltrvn
-      rkvatefesf sldstfhakk qipcivsmlt kelyfyh
