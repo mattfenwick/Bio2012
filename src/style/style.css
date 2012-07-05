@@ -199,10 +199,10 @@ body {
 #list {
 	background-color: #eeeeee;
 	border: #dddddd 2px solid;
-	width: 650px;
+	width: 460px;
 	margin-left: 100px;
 	overflow:scroll;
-	height: 550px;
+	height: 450px;
 	-webkit-box-shadow:5px 5px 5px #999999; 
 -moz-box-shadow: 5px 5px 5px #999999; 
 box-shadow:5px 5px 5px #999999; 
