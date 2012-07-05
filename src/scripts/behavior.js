@@ -3,10 +3,10 @@ $(document).ready(function () {
 
 
     $("#AminoTable tbody").toggle();
+    
+    $("#AminoTable th").click(function () {
 
-    $("#AminoTable th").hover(function () {
-
-        $("#AminoTable tbody").toggle('fast');
+        $("#AminoTable tbody").slideToggle("fast");
 
     });
 

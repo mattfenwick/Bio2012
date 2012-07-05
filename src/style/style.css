@@ -60,13 +60,22 @@ body {
 	empty-cells: show;
 	float: right;
 	text-align: left;
+	background-color:white;
 }
 
 #AminoTable td {
 	padding-right: .5em;
-	background-color: white;
 	font-size: 12px;
 	width: 270px;
+}
+
+#AminoTable tr:hover{
+	background-color: blue;
+	color:white;
+}
+
+#AminoTable thead:hover{
+	color:black !important;
 }
 
 #banner {
