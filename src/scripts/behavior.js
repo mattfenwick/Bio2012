@@ -1,12 +1,17 @@
 $(document).ready(function () {
 
 
-
+	
     $("#AminoTable tbody").toggle();
+    
+    $("body").click(function(){
+    	$("#AminoTable tbody").slideUp(.1);
+    });
     
     $("#AminoTable th").click(function () {
 
-        $("#AminoTable tbody").slideToggle("fast");
+        $("#AminoTable tbody").slideToggle(50);
+        return false;
 
     });
 

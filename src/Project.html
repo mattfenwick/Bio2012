@@ -199,7 +199,7 @@
        jmolSetAppletColor("#000000");
        jmolApplet(500,"load=1BNA");
        jmolScript("set loadFormat = http://www.rcsb.org/pdb/files/%FILE.pdb.gz");
-       jmolScript("load =1BNA");
+       jmolScript("spin");
        
     </script>
     <br></br>
@@ -209,7 +209,7 @@
 			$("#button2").click(function () {
 				var id=$("#jmolID").val();
 				var command ="load ="+id;
-				jmolScript(command)
+				jmolScript(command);
 			});
 			</script>
     </div>
