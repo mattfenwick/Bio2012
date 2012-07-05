@@ -69,13 +69,16 @@ body {
 	width: 270px;
 }
 
-#AminoTable tr:hover{
+#AminoTable tbody tr:hover{
 	background-color: blue;
 	color:white;
 }
 
-#AminoTable thead:hover{
-	color:black !important;
+#AminoTable th {
+	font-weight: normal;
+	width: 270px;
+	font-size: 14px;
+	text-align: center;
 }
 
 #banner {
@@ -343,13 +346,6 @@ box-shadow:5px 5px 5px #999999;
 
 #AminoTable2 {
 	float: left;
-}
-
-#AminoTable th {
-	font-weight: normal;
-	width: 270px;
-	font-size: 14px;
-	text-align: center;
 }
 
 #stats>div {
