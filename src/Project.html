@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="style/style.css" rel="stylesheet" type="text/css" />
+<!-- <link href="style/style.css" rel="stylesheet" type="text/css" /> -->
 <title>Protein Statistics</title>
 <script type="text/javascript" src="jslibs/jquery1.7.2.js"></script>
 <script type="text/javascript" src="scripts/unicorns.js"></script>
@@ -186,6 +186,7 @@
 			<li>GitHub: Gui for Git & Git repositories</li>
 			<h4>Future directions:<h4>
 			<li>Big Data</li>
+			
 		
 		</ul>
 		
@@ -197,7 +198,7 @@
 		<script type="text/javascript">
        jmolInitialize("../JMolJar", "JmolAppletSigned.jar");
        jmolSetAppletColor("#000000");
-       jmolApplet(500,"load=1BNA");
+       jmolApplet(500,"load ../3sc7.pdb");
        jmolScript("set loadFormat = http://www.rcsb.org/pdb/files/%FILE.pdb.gz");
        jmolScript("set spinX");
        jmolScript("spin")

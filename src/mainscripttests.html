@@ -41,7 +41,7 @@
 		var seq="ME EN N K";
 		var aas = Statistics.createOneLetterLookup(Statistics.aminoAcidsReference);
 		var seq1 = Statistics.removeSpaces(seq);
-		var i;spaces=false;
+		var i,spaces=false;
 		for(i = 0; i<seq1.length; i++){
 			if(seq1[i]===" "){
 				throw new Error("space found in seq1");
