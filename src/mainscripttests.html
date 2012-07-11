@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
- <head>
-  <title>Tests</title>
-  <link href="style/qunit.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="jslibs/jquery1.7.2.js"></script>
-  <script type="text/javascript" src="jslibs/qunit.js"></script>
-  <script type="text/javascript" src="scripts/MainScript.js"></script>
- </head>
+<head>
+<title>Tests</title>
+<link href="style/qunit.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jslibs/jquery1.7.2.js"></script>
+<script type="text/javascript" src="jslibs/qunit.js"></script>
+<script type="text/javascript" src="scripts/MainScript.js"></script>
+</head>
 
 
 <script>
@@ -41,7 +41,7 @@
 		var seq="ME EN N K";
 		var aas = Statistics.createOneLetterLookup(Statistics.aminoAcidsReference);
 		var seq1 = Statistics.removeSpaces(seq);
-		var i;spaces=false;
+		var i,spaces=false;
 		for(i = 0; i<seq1.length; i++){
 			if(seq1[i]===" "){
 				throw new Error("space found in seq1");
@@ -123,22 +123,46 @@
 	})
 	
 	test("check loadCodon function",function(){
-		var seq="AUGCGAGCGCCCUAGUUU";
+		var seq="AuG CGA GCGCCCUAgUUU";
 		var codonArrayTest=["AUG","CGA","GCG","CCC","UAG","UUU"];
-		deepEqual(codonArrayTest, loadCodon(seq));
+		deepEqual(codonArrayTest, Statistics.loadCodon(seq));
 	})
 	
+ test("check find Codon string function",function(){
+ 		var seq="GAU";
+ 		var testAmino=Statistics.aminoAcidsReference[2];
+ 		deepEqual(testAmino,Statistics.findCodonAminoAcid(seq));
+ 	})
+ 	
+ 	test("check codon to protein function", function(){
+ 		var codonArray=["GCU","UGU","GAU"];
+ 		var tst=[Statistics.aminoAcidsReference[0],Statistics.aminoAcidsReference[1],Statistics.aminoAcidsReference[2]];
+ 		deepEqual(tst,Statistics.convertCodonToProtein(codonArray));
+ 	});
+	
+	test("capCodonFunction",function(){
+		var seq = "AUGCCCGCGUAA";
+		var seq2="CCCGCG";
+		deepEqual(seq2,Statistics.capCodon(seq));
+	})
+	
+	test("test runCodon",function(){
+		var sequence = "aug cgc ccc";
+		var converted = Statistics.runCodon(sequence);
+		deepEqual("RP",converted);
+	})
+ 	
   });
 </script>
 
 
 <body>
- <h1 id="qunit-header">QUnit example</h1>
- <h2 id="qunit-banner"></h2>
- <div id="qunit-testrunner-toolbar"></div>
- <h2 id="qunit-userAgent"></h2>
- <ol id="qunit-tests"></ol>
- <div id="qunit-fixture">test markup, will be hidden</div>
+	<h1 id="qunit-header">QUnit example</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+	<div id="qunit-fixture">test markup, will be hidden</div>
 </body>
 
 </html>

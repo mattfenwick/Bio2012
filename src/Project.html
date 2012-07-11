@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="style/style.css" rel="stylesheet" type="text/css" />
+<link href="style/style.css" rel="stylesheet" type="text/css" >
 <title>Protein Statistics</title>
 <script type="text/javascript" src="jslibs/jquery1.7.2.js"></script>
+<script type="text/javascript" src="scripts/unicorns.js"></script>
 <script type="text/javascript" src="scripts/MainScript.js"> </script>
 <script type="text/javascript" src="scripts/behavior.js"> </script>
 <script type="text/javascript" src="../JmolJar/Jmol.js"></script>
@@ -22,7 +23,7 @@
 		<br></br> <br></br>
 <div id="stats">
 		<div id="stats1">Molecular Weight:
-		<span id="weight"></span>
+		<span id="weight"></span>g/mol
 		</div>
 		<div id="stats2">Hydrophobic Residues:
 		<span id="hydrophobic"></span>%
@@ -41,69 +42,90 @@
 				</thead>
 <div id="n2">
 				<tbody>
+				<tr>
 					<td>Alaline</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Arginine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Asparagine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Aspartic acid</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Cysteine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Glutamic acid</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Glutamine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Clycine</td>
 					<td></td>
 					<tr>
 					<td>Ornithine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Proline</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Selenocysteine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Serine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Taurine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Leucine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Histidine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Isoleucine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Lysine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Methionine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Phenylalanine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Threonine</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Tryptophan</td>
 					<td></td>
 					</tr>
+					<tr>
 					<td>Valine</td>
 					<td></td>
 					</tr>
@@ -129,29 +151,67 @@
 			</div>
 		
 			<br></br>
-			<br></br>
-			<br></br>
-			<div id="mole">
-		type here
 			
+		
+<!-- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp -->
+		<div id="codonConverter">Enter RNA codon sequence:
+		    <input id="codonSeq"></input>
+		    <button id="buttonCodons" >Convert</button><br></br>
+		    <p id=convertedSeq>Converted Amino Acid Sequence Here:<p>	
+		    </div>
+
+			<ul id="list">
+			<h2>Cutting Edge Presentation</h2>
+			<h3>by Jack and Janyu</h3>
+			<h4>What is Bioinformatics?</h4>
+			<li>The application of information technology and computer science to the fields of biology and medicine.</li>
+			<li>Some of the topics it covers-databases and information systems, artificial intelligence, structural
+                biology, image processing and more</li>
+            <h4>What our lab does</h4>
+			<li>Software for NMR analysis</li>
+			<h4>What we did</h4>
+			<li>To create our own bioinformatic application</li>
+			<li>Web app: protein statistic analyzer and RNA codon to protein converter
+                as well as jmol applet</li>
+            <h4>What our lab does</h4>
+			<li>3 components of the web app simultaneaously:</li>
+			<li>HTML= Skeleton, Content of Web page links all parts files of website together</li>
+			<img src="Capture.JPG" alt="hehehe"></img>
+			<li>CSS= cascading style sheets, design rules</li>
+			<li>Javascript=function</li>
+			<h4>Also used:</h4>
+			<li>Eclipse=IDE(text editor)</li>
+			<li>Git & GitHub</li>
+			<li>Git: Version Control System</li>
+			<li>GitHub: Gui for Git & Git repositories</li>
+			<h4>Future directions:<h4>
+			<li>Big Data</li>
+			
+		
+		</ul>
+		
+			
+			<div id="mole">
+		
 			
 	<div id="jmol">
 		<script type="text/javascript">
        jmolInitialize("../JMolJar", "JmolAppletSigned.jar");
        jmolSetAppletColor("#000000");
-       jmolApplet(500,"load=1crn");
+       jmolApplet(500,"load ../3sc7.pdb");
        jmolScript("set loadFormat = http://www.rcsb.org/pdb/files/%FILE.pdb.gz");
-       jmolScript("load =1d66");
+       jmolScript("set spinX");
+       jmolScript("spin")
        
     </script>
     <br></br>
-    	Enter PDB 4-lettered ID:  <br></br> <input id="jmolID" />
+    	Enter RCSB PDB 4-lettered ID:  <br></br> <input id="jmolID" />
 			<button id="button2">Load</button>
 			<script type="text/javascript">
 			$("#button2").click(function () {
 				var id=$("#jmolID").val();
 				var command ="load ="+id;
-				jmolScript(command)
+				jmolScript(command);
 			});
 			</script>
     </div>
